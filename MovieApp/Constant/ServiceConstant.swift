@@ -2,19 +2,24 @@
 //  ServiceConstant.swift
 //  MovieApp
 //
-//  Created by Ahmet Ozkan on 18.11.2022.
-//
+//  Created by Ahmet Ozkan on 19.11.2022.
+// https://www.omdbapi.com/?t=joker&apikey=73857ef3
+
 
 import Foundation
+
 
 extension Constant{
     
     enum MovieServiceEndPoint: String{
-        case BASE_URL = ""
-        case API_KEY = ""
+        case BASE_URL = "https://www.omdbapi.com/"
+        case API_KEY = "73857ef3"
         
         static func movieGetEndPoint() -> String{
-            "\(BASE_URL.rawValue)\(API_KEY.rawValue)"
+            "\(BASE_URL.rawValue)"
+        }
+        static func movieApiKey() -> String{
+            "\(API_KEY.rawValue)"
         }
     }
    
