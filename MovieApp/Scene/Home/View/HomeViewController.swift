@@ -9,6 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var statusLoadingImageView: UIImageView!
+    
     @IBOutlet weak var movieSearchField: UITextField!
     @IBOutlet weak var movieTableView: UITableView!
     
@@ -23,26 +26,46 @@ class HomeViewController: UIViewController {
         
         setupUI()
         movieTableViewInitial()
-        movieSearchFieldInitial()
+       
     }
     
-    @objc func reloadMovies(){
-        //articleItemsReload()
-       // articleIndicatorLoading.isHidden = false
+    @IBAction func searchButtonClick(_ sender: Any) {
+        searchLoadingInput()
     }
+    
+
 }
 extension HomeViewController: HomeViewModelProtocol{
+    func isMovieSearchLoading() {
+        self.statusView.isHidden = false
+        self.statusLoadingImageView.image = UIImage(named:"search")
+        
+    }
+    
+    
+    func isMovieNoData() {
+        self.statusView.isHidden = false
+        self.statusLoadingImageView.image = UIImage(named:"no-data")
+    }
+    
     func movieItemsReload() {
         DispatchQueue.main.async {
-            self.movieTableView.reloadData()
-          //  self.articleIndicatorLoading.isHidden = true
+          self.movieTableView.reloadData()
+          self.statusView.isHidden = true
         }
     }
 }
 extension HomeViewController{
     func setupUI(){
+     
     }
 }
+extension HomeViewController{
+    func searchLoadingInput(){
+        homeViewModel.fetchMoviesServiceSearchAndInit(movieSearchField.text)
+    }
+}
+
 extension HomeViewController{
     func goToDetailViewController(_ item: Movie?){
         OperationQueue.main.addOperation {
@@ -55,51 +78,7 @@ extension HomeViewController{
         }
     }
 }
-extension HomeViewController: UITextFieldDelegate{
-    
-    func movieSearchFieldInitial(){
-        movieSearchField.delegate = self
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        var searchText  = textField.text!
-        print(searchText)
-        // limit to 3 characters
-        let characterCountLimit = 3
-        
-        let startingLength = searchText.count // Length of text
-        let lengthToAdd = string.count // Length of text add
-        let lengthToReplace = range.length // add/delete o text  add = 0, backspace = 1
-        let newLength = startingLength + lengthToAdd - lengthToReplace // Total length
-        
-        // Backspace Controller
-        if range.length == 0{
-            searchText += string
-        }else if range.length == 1{
-            searchText.removeLast()
-        }
-        // 3 second wait after searching process
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-        // Limit controller
-        if characterCountLimit <= newLength{
-           
-                self.homeViewModel.fetchMoviesServiceSearchAndInit(searchText)
-                self.movieItemsReload()
-            }
-            else{
-               // if !searchViewModel.searchListItems.isEmpty {
-               //     searchViewModel.searchListItems.removeAll()
-              //  }
-            }
-        }
-       // self.searchListItemsReload()
-        return true
-    }
-}
+
 
 private extension HomeViewController{
     private func movieTableViewInitial(){
@@ -114,9 +93,10 @@ private extension HomeViewController{
 
 extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return homeViewModel.getListItemCount()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         goToDetailViewController( homeViewModel.didClickItem(at: indexPath.row))
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

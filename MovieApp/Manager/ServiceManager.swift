@@ -17,12 +17,18 @@ extension ServiceManager{
     
     // MARK: - Fetch
     //General api retrieval is done with the generic function
-    func fetch<T>(path: String,parameters: Parameters?, onSuccess: @escaping (T) -> (),onError:(String?) -> ()) where T: Codable{
+    func fetch<T>(path: String,params: Parameters?, onSuccess: @escaping (T) -> (),onError:(String?) -> ()) where T: Codable{
         
         // Alamofire request
-        AF.request( path, method: .get, parameters: parameters, encoding: JSONEncoding.default).validate().responseDecodable(of: T.self) { response in
+      /*  AF.request( path, method: .get, parameters: parameters, encoding: JSONEncoding.default).validate().responseDecodable(of: T.self) { response in
             guard let model = response.value else{print(response.error as Any); return}
             onSuccess(model)
+        }
+        */
+        AF.request(path ,parameters: params ).validate().responseDecodable(of: T.self) { response in
+            guard let model = response.value else{print(response.error as Any); return}
+            onSuccess(model)
+
         }
     }
 }

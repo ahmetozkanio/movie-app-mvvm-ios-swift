@@ -21,16 +21,20 @@ class HomeModel: HomeModelProtocol{
     var endPoint = "https://www.omdbapi.com"
     // Movie models is fetch
     func fetchMovies(searchText: String, onSuccess: @escaping (Movie?) -> (), onError: @escaping (String?) -> ()) {
+        let endPoint = Constant.MovieServiceEndPoint.movieGetEndPoint()
+        let apiKey = Constant.MovieServiceEndPoint.movieApiKey()
         let params  = [
-            "apikey": "73857ef3",
+            "apikey": apiKey,
             "t": searchText
         ]
-        print(searchText)
-        AF.request( endPoint,parameters: params ).validate().responseDecodable(of: Movie.self) { response in
-            guard let model = response.value else{print(response.error as Any); return}
-            onSuccess(model)
-            print(model)
+        ServiceManager.shared.fetch(path: endPoint, params: params) { (response: Movie) in
+            onSuccess(response)
+          
+        } onError: { error in
+            print("Fetch Movies Error: \(String(describing: error))")
         }
+
+        
     }
 }
 

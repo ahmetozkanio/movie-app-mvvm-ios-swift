@@ -10,14 +10,15 @@ import Kingfisher
 class MovieDetailViewController: UIViewController {
     var item: Movie?
     @IBOutlet weak var posterView: UIImageView!
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var labelSub: UILabel!
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelContent: UILabel!
-    @IBOutlet weak var labelBottom1: UILabel!
-    @IBOutlet weak var labelBottom2: UILabel!
+    @IBOutlet weak var yearText: UILabel!
+    @IBOutlet weak var runtimeText: UILabel!
+    @IBOutlet weak var imdbText: UILabel!
+    @IBOutlet weak var subtitleText: UILabel!
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var directorText: UILabel!
+    @IBOutlet weak var genreText: UILabel!
+    @IBOutlet weak var awardsText: UILabel!
+    @IBOutlet weak var contentText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -35,14 +36,15 @@ extension MovieDetailViewController{
         if item != nil {
             posterView.kf.setImage(with:  URL(string: (item?.poster)!))
             
-            label1.text = item?.awards
-            label2.text = item?.awards
-            label3.text = item?.awards
-            labelSub.text = item?.awards
-            labelTitle.text = item?.title
-            labelContent.text = item?.awards
-            labelBottom1.text = item?.awards
-            labelBottom2.text = item?.awards
+            yearText.text = item?.year ?? ""
+            runtimeText.text = item?.runtime ?? ""
+            imdbText.text = item?.imdbRating ?? ""
+            subtitleText.text = item?.actors ?? ""
+            titleText.text = item?.title ?? ""
+            directorText.text = item?.director ?? ""
+            genreText.text = item?.genre ?? ""
+            awardsText.text = item?.awards ?? ""
+            contentText.text = item?.plot ?? ""
            }
     }
 }

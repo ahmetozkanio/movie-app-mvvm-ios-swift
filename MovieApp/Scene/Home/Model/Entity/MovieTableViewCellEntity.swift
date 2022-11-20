@@ -16,5 +16,7 @@ struct MovieTableViewCellEntity{
     let runtime: String?
     let director: String?
     let awards: String?
+    let genre: String?
+    let language: String?
     let poster: String?
 }
