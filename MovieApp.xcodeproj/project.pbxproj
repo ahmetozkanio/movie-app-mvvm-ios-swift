@@ -17,6 +17,14 @@
 		4807B4A929292537005497B0 /* MovieTableViewCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807B4A829292537005497B0 /* MovieTableViewCellEntity.swift */; };
 		4807B4AD29292C70005497B0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4807B4AC29292C70005497B0 /* Kingfisher */; };
 		4807B4B029293624005497B0 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807B4AF29293624005497B0 /* MovieDetailViewController.swift */; };
+		484CB582292A6D9700D37D19 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CB581292A6D9700D37D19 /* SplashViewController.swift */; };
+		484CB587292A6DCC00D37D19 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CB586292A6DCC00D37D19 /* SplashViewModel.swift */; };
+		484CB589292A6DD800D37D19 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CB588292A6DD800D37D19 /* SplashModel.swift */; };
+		4888E4AF292A7ECD00C1EE7D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4888E4AE292A7ECD00C1EE7D /* FirebaseAnalytics */; };
+		4888E4B1292A7ECD00C1EE7D /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4888E4B0292A7ECD00C1EE7D /* FirebaseMessaging */; };
+		4888E4B3292A7ECD00C1EE7D /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 4888E4B2292A7ECD00C1EE7D /* FirebaseRemoteConfig */; };
+		4888E4B7292A917A00C1EE7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4888E4B6292A917A00C1EE7D /* GoogleService-Info.plist */; };
+		4888E4B9292ABE4500C1EE7D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888E4B8292ABE4300C1EE7D /* NetworkManager.swift */; };
 		488E84062928C67B00567D2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E84052928C67B00567D2B /* AppDelegate.swift */; };
 		488E84082928C67B00567D2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E84072928C67B00567D2B /* SceneDelegate.swift */; };
 		488E840A2928C67B00567D2B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E84092928C67B00567D2B /* HomeViewController.swift */; };
@@ -37,6 +45,11 @@
 		4807B4A32928E2D6005497B0 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		4807B4A829292537005497B0 /* MovieTableViewCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellEntity.swift; sourceTree = "<group>"; };
 		4807B4AF29293624005497B0 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		484CB581292A6D9700D37D19 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		484CB586292A6DCC00D37D19 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		484CB588292A6DD800D37D19 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
+		4888E4B6292A917A00C1EE7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4888E4B8292ABE4300C1EE7D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		488E84022928C67B00567D2B /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488E84052928C67B00567D2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488E84072928C67B00567D2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,8 +68,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4888E4B1292A7ECD00C1EE7D /* FirebaseMessaging in Frameworks */,
 				4807B4AD29292C70005497B0 /* Kingfisher in Frameworks */,
 				4807B4A729290AAB005497B0 /* Alamofire in Frameworks */,
+				4888E4AF292A7ECD00C1EE7D /* FirebaseAnalytics in Frameworks */,
+				4888E4B3292A7ECD00C1EE7D /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				4807B4972928E1D0005497B0 /* ServiceManager.swift */,
+				4888E4B8292ABE4300C1EE7D /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -87,6 +104,40 @@
 				4807B4A829292537005497B0 /* MovieTableViewCellEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		484CB580292A6D6A00D37D19 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				484CB583292A6DA100D37D19 /* Model */,
+				484CB585292A6DB500D37D19 /* View */,
+				484CB584292A6DAC00D37D19 /* ViewModel */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		484CB583292A6DA100D37D19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				484CB588292A6DD800D37D19 /* SplashModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		484CB584292A6DAC00D37D19 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				484CB586292A6DCC00D37D19 /* SplashViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		484CB585292A6DB500D37D19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				484CB581292A6D9700D37D19 /* SplashViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		488E83F92928C67A00567D2B = {
@@ -139,6 +190,7 @@
 		488E841E2928C73800567D2B /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				484CB580292A6D6A00D37D19 /* Splash */,
 				488E84132928C68300567D2B /* LaunchScreen.storyboard */,
 				488E840B2928C67B00567D2B /* Main.storyboard */,
 				488E84202928C75700567D2B /* Home */,
@@ -151,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				488E84162928C68300567D2B /* Info.plist */,
+				4888E4B6292A917A00C1EE7D /* GoogleService-Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -227,6 +280,9 @@
 			packageProductDependencies = (
 				4807B4A629290AAB005497B0 /* Alamofire */,
 				4807B4AC29292C70005497B0 /* Kingfisher */,
+				4888E4AE292A7ECD00C1EE7D /* FirebaseAnalytics */,
+				4888E4B0292A7ECD00C1EE7D /* FirebaseMessaging */,
+				4888E4B2292A7ECD00C1EE7D /* FirebaseRemoteConfig */,
 			);
 			productName = MovieApp;
 			productReference = 488E84022928C67B00567D2B /* MovieApp.app */;
@@ -259,6 +315,7 @@
 			packageReferences = (
 				4807B4A529290AAB005497B0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4807B4AB29292C70005497B0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 488E84032928C67B00567D2B /* Products */;
 			projectDirPath = "";
@@ -276,6 +333,7 @@
 			files = (
 				488E84152928C68300567D2B /* LaunchScreen.storyboard in Resources */,
 				488E84122928C68300567D2B /* Assets.xcassets in Resources */,
+				4888E4B7292A917A00C1EE7D /* GoogleService-Info.plist in Resources */,
 				488E84522928D76B00567D2B /* MovieTableViewCell.xib in Resources */,
 				488E840D2928C67B00567D2B /* Main.storyboard in Resources */,
 			);
@@ -288,13 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484CB587292A6DCC00D37D19 /* SplashViewModel.swift in Sources */,
 				488E84512928D76B00567D2B /* MovieTableViewCell.swift in Sources */,
 				4807B4A929292537005497B0 /* MovieTableViewCellEntity.swift in Sources */,
 				4807B4A22928E2CA005497B0 /* MovieEntity.swift in Sources */,
 				4807B4A42928E2D6005497B0 /* HomeModel.swift in Sources */,
 				4807B4B029293624005497B0 /* MovieDetailViewController.swift in Sources */,
+				484CB582292A6D9700D37D19 /* SplashViewController.swift in Sources */,
 				4807B4A02928E2BD005497B0 /* HomeViewModel.swift in Sources */,
+				484CB589292A6DD800D37D19 /* SplashModel.swift in Sources */,
 				488E840A2928C67B00567D2B /* HomeViewController.swift in Sources */,
+				4888E4B9292ABE4500C1EE7D /* NetworkManager.swift in Sources */,
 				488E84062928C67B00567D2B /* AppDelegate.swift in Sources */,
 				4807B49E2928E257005497B0 /* Constant.swift in Sources */,
 				488E84102928C67B00567D2B /* MovieApp.xcdatamodeld in Sources */,
@@ -538,6 +600,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 8.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -550,6 +620,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4807B4AB29292C70005497B0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		4888E4AE292A7ECD00C1EE7D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4888E4B0292A7ECD00C1EE7D /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		4888E4B2292A7ECD00C1EE7D /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 

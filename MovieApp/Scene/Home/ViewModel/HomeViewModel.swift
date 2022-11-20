@@ -6,11 +6,11 @@
 //
 
 import Foundation
+
 protocol HomeViewModelProtocol: AnyObject{
     func movieItemsReload()
     func isMovieNoData()
     func isMovieSearchLoading()
- 
 }
 
 protocol MovieListItemsDelegate: AnyObject{
@@ -23,7 +23,9 @@ final class HomeViewModel{
     weak var movieListItemsDelegate: MovieListItemsDelegate?
     private var movieItem: Movie?
     private var itemCount = 0
+    
     init(){}
+    
     func didViewLoad(){
         fetchMoviesServiceSearchAndInit(nil)
     }

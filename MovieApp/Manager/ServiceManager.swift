@@ -20,11 +20,6 @@ extension ServiceManager{
     func fetch<T>(path: String,params: Parameters?, onSuccess: @escaping (T) -> (),onError:(String?) -> ()) where T: Codable{
         
         // Alamofire request
-      /*  AF.request( path, method: .get, parameters: parameters, encoding: JSONEncoding.default).validate().responseDecodable(of: T.self) { response in
-            guard let model = response.value else{print(response.error as Any); return}
-            onSuccess(model)
-        }
-        */
         AF.request(path ,parameters: params ).validate().responseDecodable(of: T.self) { response in
             guard let model = response.value else{print(response.error as Any); return}
             onSuccess(model)

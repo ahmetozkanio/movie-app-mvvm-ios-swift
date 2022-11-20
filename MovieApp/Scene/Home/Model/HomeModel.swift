@@ -18,7 +18,6 @@ protocol HomeModelProtocol: AnyObject{
 // MARK: HomeModel
 class HomeModel: HomeModelProtocol{
 
-    var endPoint = "https://www.omdbapi.com"
     // Movie models is fetch
     func fetchMovies(searchText: String, onSuccess: @escaping (Movie?) -> (), onError: @escaping (String?) -> ()) {
         let endPoint = Constant.MovieServiceEndPoint.movieGetEndPoint()
