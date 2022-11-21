@@ -59,21 +59,6 @@
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="49.553571428571423"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="43X-qu-mnO">
-            <objects>
-                <viewController id="ZFG-UH-eii" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LZf-mq-S7G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="PPi-IL-SXw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uQH-pu-uNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="106" y="726"/>
-        </scene>
         <!--Search Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -179,10 +164,10 @@
                                 <rect key="frame" x="0.0" y="-52" width="414" height="948"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dch-qw-0Lc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1107"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="595"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SIi-xg-axr">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1107"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="595"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZs-Pf-Cwy">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="370"/>
@@ -312,34 +297,6 @@
                                                             <constraint firstItem="WM9-30-fX3" firstAttribute="top" secondItem="Hcb-vu-XcA" secondAttribute="top" constant="16" id="Qsv-By-Pep"/>
                                                             <constraint firstItem="WM9-30-fX3" firstAttribute="leading" secondItem="Hcb-vu-XcA" secondAttribute="leading" constant="16" id="U7d-8b-jfj"/>
                                                             <constraint firstAttribute="bottom" secondItem="WM9-30-fX3" secondAttribute="bottom" constant="16" id="cr9-Z9-8yq"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVD-5P-KdN">
-                                                        <rect key="frame" x="0.0" y="595" width="414" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="q3Z-mQ-gp1"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzZ-5d-5fb">
-                                                        <rect key="frame" x="0.0" y="723" width="414" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="GP3-3Y-OU6"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQD-qu-Phd">
-                                                        <rect key="frame" x="0.0" y="851" width="414" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="E0X-Ax-e89"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wk-Fa-wvG">
-                                                        <rect key="frame" x="0.0" y="979" width="414" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="128" id="q43-By-gH2"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>

@@ -43,8 +43,5 @@ class SplashModel: SplashModelProtocol{
             }
         }
     }
-    func fetchValues(){
-        
-        
-    }
+
 }
