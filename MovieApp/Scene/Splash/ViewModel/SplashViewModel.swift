@@ -5,7 +5,8 @@
 //  Created by Ahmet Ozkan on 20.11.2022.
 //
 
-import FirebaseRemoteConfig
+
+import Foundation
 
 protocol SplashViewModelProtocol: AnyObject{
     func remoteConfigInitialText(_ text: String?)
@@ -19,10 +20,12 @@ class SplashViewModel{
     private let networkManagerControll: NetworkManagerProtocol = NetworkManager()
     private let fetchTextRemoteConfig: SplashModelProtocol = SplashModel()
     
+
     func didViewLoad(){
-        networkController()
+
         fetchRemoteConfigInitText()
     }
+    
 }
 
 extension SplashViewModel{
@@ -36,10 +39,11 @@ extension SplashViewModel{
 }
 
 extension SplashViewModel{
-    func networkController(){
+  /* func networkController(){
         self.networkManagerControll.monitorNetworkControll(isStatus: {[weak self] (value) in
             self?.delegate?.networkManagerIsStatus(value)
         })
-    }
+  }*/
 }
+
 

@@ -101,6 +101,15 @@
         }
       },
       {
+        "package": "Lottie",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios",
+        "state": {
+          "branch": null,
+          "revision": "314537ec697719fa33a9d48210f4d06a463286d3",
+          "version": "3.4.3"
+        }
+      },
+      {
         "package": "nanopb",
         "repositoryURL": "https://github.com/firebase/nanopb.git",
         "state": {
@@ -116,6 +125,15 @@
           "branch": null,
           "revision": "3e4e743631e86c8c70dbc6efdc7beaa6e90fd3bb",
           "version": "2.1.1"
+        }
+      },
+      {
+        "package": "Reachability",
+        "repositoryURL": "https://github.com/ashleymills/Reachability.swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "a81b7367f2c46875f29577e03a60c39cdfad0c8d",
+          "version": null
         }
       },
       {

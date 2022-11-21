@@ -6,15 +6,16 @@
 //
 
 import UIKit
-
+import Lottie
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var statusView: UIView!
-    @IBOutlet weak var statusLoadingImageView: UIImageView!
     
     @IBOutlet weak var movieSearchField: UITextField!
     @IBOutlet weak var movieTableView: UITableView!
     
+    @IBOutlet weak var searchAnimationView: AnimationView!
+    @IBOutlet weak var noSearchDataAnimationView: AnimationView!
     
     lazy var homeViewModel: HomeViewModel = HomeViewModel()
     
@@ -37,15 +38,24 @@ class HomeViewController: UIViewController {
 }
 extension HomeViewController: HomeViewModelProtocol{
     func isMovieSearchLoading() {
-        self.statusView.isHidden = false
-        self.statusLoadingImageView.image = UIImage(named:"search")
+        DispatchQueue.main.async {
+            self.statusView.isHidden = false
+            self.searchAnimationView.isHidden = false
+            self.noSearchDataAnimationView.isHidden = true
+            self.searchAnimationView.loopMode = .loop
+            self.searchAnimationView.play()
+        }
         
     }
     
-    
     func isMovieNoData() {
-        self.statusView.isHidden = false
-        self.statusLoadingImageView.image = UIImage(named:"no-data")
+        DispatchQueue.main.async {
+            self.statusView.isHidden = false
+            self.searchAnimationView.isHidden = true
+            self.noSearchDataAnimationView.isHidden = false
+            self.noSearchDataAnimationView.loopMode = .loop
+            self.noSearchDataAnimationView.play()
+        }
     }
     
     func movieItemsReload() {
@@ -69,12 +79,12 @@ extension HomeViewController{
 extension HomeViewController{
     func goToDetailViewController(_ item: Movie?){
         OperationQueue.main.addOperation {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller  = storyboard.instantiateViewController(withIdentifier: "MovieDetailViewID") as! MovieDetailViewController
-        controller.modalPresentationStyle = .overFullScreen
-        controller.modalTransitionStyle = .flipHorizontal
-        controller.item = item
-        self.present(controller, animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller  = storyboard.instantiateViewController(withIdentifier: "MovieDetailViewID") as! MovieDetailViewController
+            controller.modalPresentationStyle = .overFullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            controller.item = item
+            self.present(controller, animated: true, completion: nil)
         }
     }
 }

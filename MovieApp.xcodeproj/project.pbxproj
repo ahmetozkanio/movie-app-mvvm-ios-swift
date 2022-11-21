@@ -17,6 +17,10 @@
 		4807B4A929292537005497B0 /* MovieTableViewCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807B4A829292537005497B0 /* MovieTableViewCellEntity.swift */; };
 		4807B4AD29292C70005497B0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4807B4AC29292C70005497B0 /* Kingfisher */; };
 		4807B4B029293624005497B0 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807B4AF29293624005497B0 /* MovieDetailViewController.swift */; };
+		48477EDB292B698C00CF63C0 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48477EDA292B698C00CF63C0 /* PushNotification.swift */; };
+		48477EDD292B72C600CF63C0 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48477EDC292B72C600CF63C0 /* FirebaseManager.swift */; };
+		48477EE0292B805F00CF63C0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 48477EDF292B805F00CF63C0 /* Lottie */; };
+		48477EE3292B98CA00CF63C0 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 48477EE2292B98CA00CF63C0 /* Reachability */; };
 		484CB582292A6D9700D37D19 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CB581292A6D9700D37D19 /* SplashViewController.swift */; };
 		484CB587292A6DCC00D37D19 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CB586292A6DCC00D37D19 /* SplashViewModel.swift */; };
 		484CB589292A6DD800D37D19 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CB588292A6DD800D37D19 /* SplashModel.swift */; };
@@ -29,7 +33,6 @@
 		488E84082928C67B00567D2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E84072928C67B00567D2B /* SceneDelegate.swift */; };
 		488E840A2928C67B00567D2B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E84092928C67B00567D2B /* HomeViewController.swift */; };
 		488E840D2928C67B00567D2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488E840B2928C67B00567D2B /* Main.storyboard */; };
-		488E84102928C67B00567D2B /* MovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 488E840E2928C67B00567D2B /* MovieApp.xcdatamodeld */; };
 		488E84122928C68300567D2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488E84112928C68300567D2B /* Assets.xcassets */; };
 		488E84152928C68300567D2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488E84132928C68300567D2B /* LaunchScreen.storyboard */; };
 		488E84512928D76B00567D2B /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E844F2928D76B00567D2B /* MovieTableViewCell.swift */; };
@@ -45,6 +48,8 @@
 		4807B4A32928E2D6005497B0 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		4807B4A829292537005497B0 /* MovieTableViewCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellEntity.swift; sourceTree = "<group>"; };
 		4807B4AF29293624005497B0 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		48477EDA292B698C00CF63C0 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
+		48477EDC292B72C600CF63C0 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		484CB581292A6D9700D37D19 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		484CB586292A6DCC00D37D19 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		484CB588292A6DD800D37D19 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
@@ -55,7 +60,6 @@
 		488E84072928C67B00567D2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		488E84092928C67B00567D2B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		488E840C2928C67B00567D2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		488E840F2928C67B00567D2B /* MovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieApp.xcdatamodel; sourceTree = "<group>"; };
 		488E84112928C68300567D2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		488E84142928C68300567D2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		488E84162928C68300567D2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,10 +73,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4888E4B1292A7ECD00C1EE7D /* FirebaseMessaging in Frameworks */,
+				48477EE3292B98CA00CF63C0 /* Reachability in Frameworks */,
 				4807B4AD29292C70005497B0 /* Kingfisher in Frameworks */,
 				4807B4A729290AAB005497B0 /* Alamofire in Frameworks */,
 				4888E4AF292A7ECD00C1EE7D /* FirebaseAnalytics in Frameworks */,
 				4888E4B3292A7ECD00C1EE7D /* FirebaseRemoteConfig in Frameworks */,
+				48477EE0292B805F00CF63C0 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +110,15 @@
 				4807B4A829292537005497B0 /* MovieTableViewCellEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		48477ED9292B696800CF63C0 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				48477EDC292B72C600CF63C0 /* FirebaseManager.swift */,
+				48477EDA292B698C00CF63C0 /* PushNotification.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		484CB580292A6D6A00D37D19 /* Splash */ = {
@@ -159,12 +174,12 @@
 		488E84042928C67B00567D2B /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				488E841D2928C72D00567D2B /* App */,
+				488E841F2928C74300567D2B /* Support */,
+				488E841C2928C71F00567D2B /* Resources */,
 				4807B4992928E1E0005497B0 /* Constant */,
 				4807B4952928E17F005497B0 /* Manager */,
-				488E841F2928C74300567D2B /* Support */,
 				488E841E2928C73800567D2B /* Scene */,
-				488E841D2928C72D00567D2B /* App */,
-				488E841C2928C71F00567D2B /* Resources */,
 			);
 			path = MovieApp;
 			sourceTree = "<group>";
@@ -173,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				488E84112928C68300567D2B /* Assets.xcassets */,
-				488E840E2928C67B00567D2B /* MovieApp.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -181,6 +195,7 @@
 		488E841D2928C72D00567D2B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				48477ED9292B696800CF63C0 /* Firebase */,
 				488E84052928C67B00567D2B /* AppDelegate.swift */,
 				488E84072928C67B00567D2B /* SceneDelegate.swift */,
 			);
@@ -283,6 +298,8 @@
 				4888E4AE292A7ECD00C1EE7D /* FirebaseAnalytics */,
 				4888E4B0292A7ECD00C1EE7D /* FirebaseMessaging */,
 				4888E4B2292A7ECD00C1EE7D /* FirebaseRemoteConfig */,
+				48477EDF292B805F00CF63C0 /* Lottie */,
+				48477EE2292B98CA00CF63C0 /* Reachability */,
 			);
 			productName = MovieApp;
 			productReference = 488E84022928C67B00567D2B /* MovieApp.app */;
@@ -316,6 +333,8 @@
 				4807B4A529290AAB005497B0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4807B4AB29292C70005497B0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				48477EDE292B805E00CF63C0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				48477EE1292B98C900CF63C0 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = 488E84032928C67B00567D2B /* Products */;
 			projectDirPath = "";
@@ -352,6 +371,7 @@
 				4807B4A22928E2CA005497B0 /* MovieEntity.swift in Sources */,
 				4807B4A42928E2D6005497B0 /* HomeModel.swift in Sources */,
 				4807B4B029293624005497B0 /* MovieDetailViewController.swift in Sources */,
+				48477EDD292B72C600CF63C0 /* FirebaseManager.swift in Sources */,
 				484CB582292A6D9700D37D19 /* SplashViewController.swift in Sources */,
 				4807B4A02928E2BD005497B0 /* HomeViewModel.swift in Sources */,
 				484CB589292A6DD800D37D19 /* SplashModel.swift in Sources */,
@@ -359,8 +379,8 @@
 				4888E4B9292ABE4500C1EE7D /* NetworkManager.swift in Sources */,
 				488E84062928C67B00567D2B /* AppDelegate.swift in Sources */,
 				4807B49E2928E257005497B0 /* Constant.swift in Sources */,
-				488E84102928C67B00567D2B /* MovieApp.xcdatamodeld in Sources */,
 				488E84082928C67B00567D2B /* SceneDelegate.swift in Sources */,
+				48477EDB292B698C00CF63C0 /* PushNotification.swift in Sources */,
 				4807B4982928E1D0005497B0 /* ServiceManager.swift in Sources */,
 				4807B49C2928E1FC005497B0 /* ServiceConstant.swift in Sources */,
 			);
@@ -600,6 +620,22 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		48477EDE292B805E00CF63C0 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 3.4.3;
+			};
+		};
+		48477EE1292B98C900CF63C0 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -621,6 +657,16 @@
 			package = 4807B4AB29292C70005497B0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
+		48477EDF292B805F00CF63C0 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48477EDE292B805E00CF63C0 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		48477EE2292B98CA00CF63C0 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48477EE1292B98C900CF63C0 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			productName = Reachability;
+		};
 		4888E4AE292A7ECD00C1EE7D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4888E4AD292A7ECD00C1EE7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -637,19 +683,6 @@
 			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		488E840E2928C67B00567D2B /* MovieApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				488E840F2928C67B00567D2B /* MovieApp.xcdatamodel */,
-			);
-			currentVersion = 488E840F2928C67B00567D2B /* MovieApp.xcdatamodel */;
-			path = MovieApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 488E83FA2928C67A00567D2B /* Project object */;
 }

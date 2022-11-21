@@ -30,29 +30,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video" translatesAutoresizingMaskIntoConstraints="NO" id="4aN-vq-QTS">
-                                <rect key="frame" x="0.0" y="108" width="414" height="65"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote Config Call Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYm-MX-wnA">
-                                <rect key="frame" x="0.0" y="237" width="414" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
-                                <color key="textColor" systemColor="systemGreenColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Mqj-5B-dV1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niz-L1-ezw" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="256" id="6Ci-pJ-ixl"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="movie-loading"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thf-Tj-47g">
+                                        <rect key="frame" x="0.0" y="272" width="414" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote Config Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p41-4h-357">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="p41-4h-357" firstAttribute="leading" secondItem="thf-Tj-47g" secondAttribute="leading" id="5pB-Q8-Jh6"/>
+                                            <constraint firstAttribute="bottom" secondItem="p41-4h-357" secondAttribute="bottom" id="FjD-aS-3jM"/>
+                                            <constraint firstItem="p41-4h-357" firstAttribute="top" secondItem="thf-Tj-47g" secondAttribute="top" id="HaV-q3-MBQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="p41-4h-357" secondAttribute="trailing" id="s9Z-aH-gof"/>
+                                            <constraint firstAttribute="height" constant="128" id="wBQ-bK-0fe"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1V-zb-oj1" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="416" width="414" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="0ZC-it-tKu"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loading"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ycc-7m-HfQ">
+                                        <rect key="frame" x="0.0" y="560" width="414" height="258"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAs-Rl-QMw" customClass="AnimationView" customModule="Lottie">
+                                                <rect key="frame" x="0.0" y="32" width="414" height="226"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="wifi-disconnected"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="QAs-Rl-QMw" secondAttribute="bottom" id="Pzz-um-8BC"/>
+                                            <constraint firstItem="QAs-Rl-QMw" firstAttribute="leading" secondItem="Ycc-7m-HfQ" secondAttribute="leading" id="Xd5-q0-iTF"/>
+                                            <constraint firstItem="QAs-Rl-QMw" firstAttribute="top" secondItem="Ycc-7m-HfQ" secondAttribute="top" constant="32" id="i5m-7W-8aJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="QAs-Rl-QMw" secondAttribute="trailing" id="thH-sO-QWU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uhL-yH-m4Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eYm-MX-wnA" firstAttribute="top" secondItem="4aN-vq-QTS" secondAttribute="bottom" constant="64" id="7Ub-81-uqw"/>
-                            <constraint firstItem="4aN-vq-QTS" firstAttribute="top" secondItem="uhL-yH-m4Q" secondAttribute="top" constant="64" id="BMq-AE-VWe"/>
-                            <constraint firstItem="eYm-MX-wnA" firstAttribute="leading" secondItem="uhL-yH-m4Q" secondAttribute="leading" id="CRF-V3-hCo"/>
-                            <constraint firstItem="uhL-yH-m4Q" firstAttribute="trailing" secondItem="eYm-MX-wnA" secondAttribute="trailing" id="Esb-He-SPk"/>
-                            <constraint firstItem="4aN-vq-QTS" firstAttribute="leading" secondItem="uhL-yH-m4Q" secondAttribute="leading" id="Sqf-K3-SQw"/>
-                            <constraint firstItem="uhL-yH-m4Q" firstAttribute="trailing" secondItem="4aN-vq-QTS" secondAttribute="trailing" id="kPi-lx-xTz"/>
+                            <constraint firstItem="uhL-yH-m4Q" firstAttribute="bottom" secondItem="Mqj-5B-dV1" secondAttribute="bottom" id="4CZ-T6-RDZ"/>
+                            <constraint firstItem="Mqj-5B-dV1" firstAttribute="top" secondItem="uhL-yH-m4Q" secondAttribute="top" id="6yo-MU-kVB"/>
+                            <constraint firstItem="Mqj-5B-dV1" firstAttribute="leading" secondItem="uhL-yH-m4Q" secondAttribute="leading" id="UyD-ip-eey"/>
+                            <constraint firstItem="uhL-yH-m4Q" firstAttribute="trailing" secondItem="Mqj-5B-dV1" secondAttribute="trailing" id="d3P-KK-h7V"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="remoteConfigTextLabel" destination="eYm-MX-wnA" id="ee9-2R-MvD"/>
+                        <outlet property="loadingView" destination="E1V-zb-oj1" id="JCs-bV-Zy8"/>
+                        <outlet property="movieTopView" destination="niz-L1-ezw" id="qF9-gF-CqX"/>
+                        <outlet property="networkControllerView" destination="QAs-Rl-QMw" id="aCy-ss-dME"/>
+                        <outlet property="remoteConfigTextLabel" destination="p41-4h-357" id="RWi-dx-PaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JHC-ab-yuC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,18 +162,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAp-ON-qhd">
                                 <rect key="frame" x="0.0" y="196.5" width="414" height="665.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="1Xq-gQ-rrL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGN-mH-EyQ" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="48" width="414" height="156"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="256" id="lzL-o4-ZB2"/>
+                                            <constraint firstAttribute="height" constant="156" id="e2L-KQ-qDm"/>
                                         </constraints>
-                                    </imageView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="detective-search"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7c-au-5YN" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="48" width="414" height="156"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="156" id="Txp-nt-9dt"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="no-data-found"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="1Xq-gQ-rrL" secondAttribute="trailing" id="0yI-jQ-A5p"/>
-                                    <constraint firstItem="1Xq-gQ-rrL" firstAttribute="top" secondItem="qAp-ON-qhd" secondAttribute="top" id="ULG-jl-mn7"/>
-                                    <constraint firstItem="1Xq-gQ-rrL" firstAttribute="leading" secondItem="qAp-ON-qhd" secondAttribute="leading" id="v66-ZV-Tuh"/>
+                                    <constraint firstItem="oGN-mH-EyQ" firstAttribute="leading" secondItem="qAp-ON-qhd" secondAttribute="leading" id="1Kb-FS-VuR"/>
+                                    <constraint firstItem="n7c-au-5YN" firstAttribute="leading" secondItem="qAp-ON-qhd" secondAttribute="leading" id="5Cf-uc-bmf"/>
+                                    <constraint firstAttribute="trailing" secondItem="oGN-mH-EyQ" secondAttribute="trailing" id="LHZ-Gh-Mfz"/>
+                                    <constraint firstItem="oGN-mH-EyQ" firstAttribute="top" secondItem="qAp-ON-qhd" secondAttribute="top" constant="48" id="aFF-2g-Yb5"/>
+                                    <constraint firstAttribute="trailing" secondItem="n7c-au-5YN" secondAttribute="trailing" id="iDP-Lv-lNc"/>
+                                    <constraint firstItem="n7c-au-5YN" firstAttribute="top" secondItem="qAp-ON-qhd" secondAttribute="top" constant="48" id="reg-fI-ah8"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -144,7 +217,8 @@
                     <connections>
                         <outlet property="movieSearchField" destination="lUn-6q-17C" id="CGc-j8-rWp"/>
                         <outlet property="movieTableView" destination="pl1-61-NWU" id="S75-iF-gps"/>
-                        <outlet property="statusLoadingImageView" destination="1Xq-gQ-rrL" id="8U2-kB-Nf8"/>
+                        <outlet property="noSearchDataAnimationView" destination="n7c-au-5YN" id="CpX-e4-Yhj"/>
+                        <outlet property="searchAnimationView" destination="oGN-mH-EyQ" id="hAp-Oq-3Y8"/>
                         <outlet property="statusView" destination="qAp-ON-qhd" id="iCu-cr-itE"/>
                     </connections>
                 </viewController>
@@ -351,8 +425,6 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="image_sample" width="3062" height="1753"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="search" width="67" height="63"/>
-        <image name="video" width="65" height="65"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -361,6 +433,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "wifi-connected.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
