@@ -8,15 +8,16 @@
 import UIKit
 import Kingfisher
 
-class MovieTableViewCell: UITableViewCell {
+// MARK: MovieTableViewCell
 
+class MovieTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var titleText: UILabel!
     @IBOutlet weak var directorText: UILabel!
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var yearText: UILabel!
     @IBOutlet weak var releasedText: UILabel!
     @IBOutlet weak var imdbRatingText: UILabel!
-    
     @IBOutlet weak var awardsText: UILabel!
     @IBOutlet weak var genreText: UILabel!
     @IBOutlet weak var languageText: UILabel!
@@ -24,21 +25,19 @@ class MovieTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
     }
-
-    
 }
+
+// MARK: MovieTableViewCell Configure Data
 
 extension MovieTableViewCell{
     func configureCellData(_ item: MovieTableViewCellEntity ){
         
-       
         titleText.text = item.title ?? ""
         yearText.text = item.year ?? ""
         releasedText.text = item.released ?? ""
         imdbRatingText.text = item.imdbRating ?? ""
-     
+        
         awardsText.text = item.awards  ?? ""
         genreText.text = item.genre ?? ""
         languageText.text = item.language ?? ""
@@ -51,6 +50,6 @@ extension MovieTableViewCell{
             posterView.image = UIImage(named: "image_sample")
         }
         
-      
+        
     }
 }

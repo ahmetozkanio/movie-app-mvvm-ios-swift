@@ -9,8 +9,9 @@ import UIKit
 import Kingfisher
 import Firebase
 
+// MARK: MovieDetailViewController
 class MovieDetailViewController: UIViewController {
-   
+    
     
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var yearText: UILabel!
@@ -28,21 +29,26 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        
     }
+    
+    // MARK: MovieDetailViewController Button Actions
     
     @IBAction func backButtonClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-
+    
 }
-// MovieDetailViewInitial configure data
+
+// MARK: MovieDetailViewController Configure Data
+
 extension MovieDetailViewController{
     func configure(){
         if let item = self.item {
+            
+            // MARK: MovieDetailViewController Firebase Analytics Set Movie Name
             Analytics.setUserProperty("\(item.title!)", forName: "Movie_Detail_Clicked")
-           
+            
             posterView.kf.setImage(with:  URL(string: (item.poster)!))
             
             yearText.text = item.year ?? ""
@@ -54,6 +60,6 @@ extension MovieDetailViewController{
             genreText.text = item.genre ?? ""
             awardsText.text = item.awards ?? ""
             contentText.text = item.plot ?? ""
-           }
+        }
     }
 }

@@ -37,6 +37,7 @@
 		488E84152928C68300567D2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488E84132928C68300567D2B /* LaunchScreen.storyboard */; };
 		488E84512928D76B00567D2B /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E844F2928D76B00567D2B /* MovieTableViewCell.swift */; };
 		488E84522928D76B00567D2B /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488E84502928D76B00567D2B /* MovieTableViewCell.xib */; };
+		48C4A65C292CC67400042CF9 /* MovieTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4A65B292CC67400042CF9 /* MovieTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		488E84162928C68300567D2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488E844F2928D76B00567D2B /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		488E84502928D76B00567D2B /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		48C4A65B292CC67400042CF9 /* MovieTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +246,7 @@
 		488E84222928C79F00567D2B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				488E844A2928D03500567D2B /* MovieTableViewCell */,
+				48C4A65A292CC65B00042CF9 /* MovieTableView */,
 				488E84092928C67B00567D2B /* HomeViewController.swift */,
 			);
 			path = View;
@@ -274,6 +276,15 @@
 				488E84502928D76B00567D2B /* MovieTableViewCell.xib */,
 			);
 			path = MovieTableViewCell;
+			sourceTree = "<group>";
+		};
+		48C4A65A292CC65B00042CF9 /* MovieTableView */ = {
+			isa = PBXGroup;
+			children = (
+				488E844A2928D03500567D2B /* MovieTableViewCell */,
+				48C4A65B292CC67400042CF9 /* MovieTableView.swift */,
+			);
+			path = MovieTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +378,7 @@
 			files = (
 				484CB587292A6DCC00D37D19 /* SplashViewModel.swift in Sources */,
 				488E84512928D76B00567D2B /* MovieTableViewCell.swift in Sources */,
+				48C4A65C292CC67400042CF9 /* MovieTableView.swift in Sources */,
 				4807B4A929292537005497B0 /* MovieTableViewCellEntity.swift in Sources */,
 				4807B4A22928E2CA005497B0 /* MovieEntity.swift in Sources */,
 				4807B4A42928E2D6005497B0 /* HomeModel.swift in Sources */,
@@ -534,6 +546,7 @@
 				DEVELOPMENT_TEAM = FPYTGW2S6P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieApp/Support/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Movie App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -562,6 +575,7 @@
 				DEVELOPMENT_TEAM = FPYTGW2S6P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieApp/Support/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Movie App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

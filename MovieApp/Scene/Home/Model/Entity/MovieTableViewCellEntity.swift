@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - MovieTableViewCellEntity
+
 struct MovieTableViewCellEntity{
     let title: String?
     let year: String?

@@ -7,13 +7,16 @@
 
 import UIKit
 import Lottie
+
+// MARK: HomeViewController
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var statusView: UIView!
-    
     @IBOutlet weak var movieSearchField: UITextField!
     @IBOutlet weak var movieTableView: UITableView!
     
+    @IBOutlet weak var movieAnimationView: AnimationView!
     @IBOutlet weak var searchAnimationView: AnimationView!
     @IBOutlet weak var noSearchDataAnimationView: AnimationView!
     
@@ -23,19 +26,19 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeViewModel.delegate = self
         homeViewModel.didViewLoad()
-        
-        
         setupUI()
         movieTableViewInitial()
-       
     }
+    
+    // MARK: HomeViewController Buttons Action
     
     @IBAction func searchButtonClick(_ sender: Any) {
         searchLoadingInput()
     }
-    
-
 }
+
+// MARK: HomeViewController Search Configure
+
 extension HomeViewController: HomeViewModelProtocol{
     func isMovieSearchLoading() {
         DispatchQueue.main.async {
@@ -60,21 +63,27 @@ extension HomeViewController: HomeViewModelProtocol{
     
     func movieItemsReload() {
         DispatchQueue.main.async {
-          self.movieTableView.reloadData()
-          self.statusView.isHidden = true
+            self.movieTableView.reloadData()
+            self.statusView.isHidden = true
         }
     }
 }
-extension HomeViewController{
-    func setupUI(){
-     
-    }
-}
+// MARK: HomeViewController Search Text Input Call
 extension HomeViewController{
     func searchLoadingInput(){
         homeViewModel.fetchMoviesServiceSearchAndInit(movieSearchField.text)
     }
 }
+
+// MARK: HomeViewController SetupUI
+extension HomeViewController{
+    func setupUI(){
+        movieAnimationView.loopMode = .loop
+        movieAnimationView.play()
+    }
+}
+
+// MARK: HomeViewController Route
 
 extension HomeViewController{
     func goToDetailViewController(_ item: Movie?){
@@ -89,35 +98,3 @@ extension HomeViewController{
     }
 }
 
-
-private extension HomeViewController{
-    private func movieTableViewInitial(){
-        movieTableView.delegate = self
-        movieTableView.dataSource = self
-        movieTableViewRegister()
-    }
-    private func movieTableViewRegister(){
-        movieTableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieTableViewCell")
-    }
-}
-
-extension HomeViewController:UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homeViewModel.getListItemCount()
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        goToDetailViewController( homeViewModel.didClickItem(at: indexPath.row))
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell") as! MovieTableViewCell
-        if let cellData = homeViewModel.getSearchListCellData(indexPath: indexPath){
-            cell.configureCellData(cellData)
-            return cell
-        }
-        return cell
-    }
-    
- 
-    
-}

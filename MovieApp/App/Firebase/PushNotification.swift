@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseMessaging
-
+// MARK: - Firebase Push Notification Configure
 extension AppDelegate{
     
     func appDelegatePushNotificationConfigure(_ application: UIApplication){
@@ -70,7 +70,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     print(userInfo)
 
     // Change this to your preferred presentation option
-    return [[.alert, .sound]]
+    return [[ .sound]]
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,

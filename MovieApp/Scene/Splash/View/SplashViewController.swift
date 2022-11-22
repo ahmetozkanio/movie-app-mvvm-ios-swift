@@ -8,23 +8,19 @@
 import UIKit
 import Lottie
 
-import Reachability
-
-
-let reactibility =  try! Reachability()
+// MARK: - SplashViewController
 
 class SplashViewController: UIViewController {
     
     @IBOutlet weak var movieTopView: AnimationView!
     @IBOutlet weak var loadingView: AnimationView!
-    @IBOutlet weak var networkControllerView: AnimationView!
+    @IBOutlet weak var networkDisconnectedView: AnimationView!
+    @IBOutlet weak var networkConnectedView: AnimationView!
+    
     @IBOutlet weak var remoteConfigTextLabel: UILabel!
-  
+    @IBOutlet weak var remoteConfigView: UIView!
     
     lazy var splashViewModel: SplashViewModel = SplashViewModel()
-   
- 
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,65 +29,88 @@ class SplashViewController: UIViewController {
         splashViewModel.didViewLoad()
         remoteConfigTextClickGoToHomeView()
         
-        
-        
-        networkController()
-        
-      
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        networkController()
-    }
-  
-    
-    func networkController(){
-        reactibility.whenReachable = { reactibility in
-            print("Wifi")
-                self.networkConnected()
- 
-        }
-        reactibility.whenUnreachable = { _ in
-            print("Unreachable Disconnect")
-            self.alertFunc()
-            self.networkDisconnected()
-          
-        }
-        do{
-            try? reactibility.startNotifier()
-        }
     }
     
-    func alertFunc(){
-        let alert = UIAlertController(title: "No Internet", message: " WIFI/Cell connection required!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", tableName: "Default Action", comment: "Comment"), style: .default, handler: { _ in
-            NSLog("OK")
-        }))
-        self.present(alert, animated: true,completion: nil)
-        
-    }
-  
+}
+// MARK: - SplashViewController SetupUI
 
-    @objc func networkDisconnected(){
-        DispatchQueue.main.async {
-            print("Disconnected")
-            self.remoteConfigTextLabel.isHidden = true
-
-            self.networkControllerView.loopMode = .loop
-            self.networkControllerView.play()
-            self.networkControllerView.isHidden = false
-        }
+extension SplashViewController{
+    func setupUI(){
+        loadingAnimationConfigure()
+        movieTopViewAnimation()
+        self.remoteConfigView.isHidden = true
+        
     }
-    @objc func networkConnected(){
-        DispatchQueue.main.async {
-            print("Connected")
-            self.remoteConfigTextLabel.isHidden = false
-            self.networkControllerView.isHidden = true
+}
+// MARK: - SplashViewController Animation Configure
+
+extension SplashViewController{
+    func movieTopViewAnimation(){
+        movieTopView.loopMode = .loop
+        movieTopView.play()
+    }
+    func loadingAnimationConfigure(){
+        loadingView.loopMode = .loop
+        loadingView.play()
+        loadingView.isHidden = false
+    }
+    
+}
+
+// MARK: - SplashViewController Network Controller with ViewModelProtocol
+
+extension SplashViewController: SplashViewModelProtocol{
+    func networkManagerIsStatus(_ isStatus: Bool) {
+        networkConnectConfigure(isStatus)
+    }
+    
+    func networkConnectConfigure(_ isStatus: Bool){
+        if isStatus{
+            DispatchQueue.main.async {
+                print("Connected")
+                
+                self.networkConnectedView.loopMode = .loop
+                self.networkConnectedView.play()
+                self.networkConnectedView.isHidden = false
+                self.networkDisconnectedView.isHidden = true
+                
+            }
+        }else{
+            DispatchQueue.main.async {
+                print("Disconnected")
+                
+                self.remoteConfigView.isHidden = true
+                
+                self.networkDisconnectedView.loopMode = .loop
+                self.networkDisconnectedView.play()
+                
+                self.networkDisconnectedView.isHidden = false
+                self.networkConnectedView.isHidden = true
+            }
+            
         }
     }
     
-   
-    @objc
-    func goToHomeView(sender:UITapGestureRecognizer) {
+    // MARK: - SplashViewController Remote Config
+    
+    func remoteConfigInitialText(_ text: String?) {
+        DispatchQueue.main.async {
+            self.loadingView.isHidden = true
+            self.remoteConfigTextLabel.text = text ?? "Remote Config Default Text"
+            self.remoteConfigView.isHidden = false
+        }
+    }
+}
+
+// MARK: - SplashViewController Route
+
+extension SplashViewController{
+    func remoteConfigTextClickGoToHomeView(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(goToHomeView))
+        remoteConfigTextLabel.isUserInteractionEnabled = true
+        remoteConfigTextLabel.addGestureRecognizer(tap)
+    }
+    @objc func goToHomeView(sender:UITapGestureRecognizer) {
         loadingView.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             OperationQueue.main.addOperation{
@@ -102,58 +121,5 @@ class SplashViewController: UIViewController {
                 self.present(controller, animated: true, completion: nil)
             }
         }
-    }
-}
-extension SplashViewController{
-    func setupUI(){
-        loadingAnimationConfigure()
-        movieTopViewAnimation()
-    }
-}
-extension SplashViewController{
-    func movieTopViewAnimation(){
-        movieTopView.loopMode = .loop
-        movieTopView.play()
-    }
-    func loadingAnimationConfigure(){
-         loadingView.loopMode = .loop
-         loadingView.play()
-         loadingView.isHidden = true
-    }
-    func networkConnectConfigure(_ isStatus: Bool){
-        if isStatus{
-            DispatchQueue.main.async {
-                self.remoteConfigTextLabel.isHidden = false
-                self.networkControllerView.isHidden = true
-            }
-            
-        }else{
-            DispatchQueue.main.async {
-                self.remoteConfigTextLabel.isHidden = true
-
-                self.networkControllerView.loopMode = .loop
-                self.networkControllerView.play()
-                self.networkControllerView.isHidden = false
-            }
-        }
-    }
-}
-
-extension SplashViewController: SplashViewModelProtocol{
-    func networkManagerIsStatus(_ isStatus: Bool) {
-           //networkConnectConfigure(isStatus)
-    }
-    
-    func remoteConfigInitialText(_ text: String?) {
-        DispatchQueue.main.async {
-            self.remoteConfigTextLabel.text = text ?? "Remote Config Default Text"
-        }
-}
-}
-extension SplashViewController{
-    func remoteConfigTextClickGoToHomeView(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(goToHomeView))
-        remoteConfigTextLabel.isUserInteractionEnabled = true
-        remoteConfigTextLabel.addGestureRecognizer(tap)
     }
 }

@@ -8,17 +8,18 @@
 import Foundation
 import Alamofire
 
-
-
-
 // MARK: HomeModelProtocol
+
 protocol HomeModelProtocol: AnyObject{
     func fetchMovies(searchText: String,onSuccess: @escaping (Movie?) -> (), onError: @escaping (String?) -> ())
 }
 // MARK: HomeModel
-class HomeModel: HomeModelProtocol{
 
-    // Movie models is fetch
+class HomeModel: HomeModelProtocol{
+    
+    
+    // MARK: HomeModel Fetch Movies
+    
     func fetchMovies(searchText: String, onSuccess: @escaping (Movie?) -> (), onError: @escaping (String?) -> ()) {
         let endPoint = Constant.MovieServiceEndPoint.movieGetEndPoint()
         let apiKey = Constant.MovieServiceEndPoint.movieApiKey()
@@ -28,11 +29,11 @@ class HomeModel: HomeModelProtocol{
         ]
         ServiceManager.shared.fetch(path: endPoint, params: params) { (response: Movie) in
             onSuccess(response)
-          
+            
         } onError: { error in
             print("Fetch Movies Error: \(String(describing: error))")
         }
-
+        
         
     }
 }

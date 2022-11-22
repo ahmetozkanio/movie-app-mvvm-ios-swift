@@ -7,4 +7,5 @@
 
 import Foundation
 
+// MARK: - Constant
 final class Constant{}

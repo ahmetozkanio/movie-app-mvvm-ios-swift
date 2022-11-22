@@ -10,14 +10,21 @@ import FirebaseRemoteConfig
 
 
 // MARK: SplashModelProtocol
+
 protocol SplashModelProtocol: AnyObject{
     func fetchRemoteConfigTextData(onSuccess: @escaping (String?) -> ())
 }
+
 // MARK: SplashModel
+
 class SplashModel: SplashModelProtocol{
     private let remoteConfig = RemoteConfig.remoteConfig()
-
+    
+    
+    // MARK: - SplashView Remote Config Fetch Request Text
+    
     func fetchRemoteConfigTextData(onSuccess: @escaping (String?) -> ()) {
+        
         let defaults: [String: NSObject] = [
             "splashText": "default value" as NSObject
         ]
@@ -43,5 +50,5 @@ class SplashModel: SplashModelProtocol{
             }
         }
     }
-
+    
 }
